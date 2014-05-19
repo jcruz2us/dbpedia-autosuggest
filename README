@@ -1,0 +1,19 @@
+## DBpedia Autosuggest ##
+---
+
+DBpedia Autosuggest is a jQuery plugin that adds a dbpedia-powered autocomplete feature to any input box.
+
+This plugin uses the [dbpedia lookup web service](https://github.com/dbpedia/lookup") to implement its search functionality.
+
+
+
+
+## Features ##
+---
+- Suggestion for dbpedia resources come up as you type
+- jQuery 1.8.3+
+- Browser Support: IE10+, FF23, Safari6, Opera12, Chrome29
+- 
+
+
+More Coming Soon...
