@@ -1,0 +1,48 @@
+$fonts-small-size: 11px;
+$fonts-large-size: 14px;
+
+$colors-light-grey: #e9edef;
+$colors-dark-grey: #808080;
+$colors-melon: #fdd78f;
+$colors-2: #a1b8c2;
+$colors-text: #427084;
+$colors-text-selected: #003048;
+
+.dbpedia-autosuggest {
+  border: 1px solid $colors-dark-grey;
+  padding: 2px;
+  margin-top: 2px;
+  background-color: white;
+  box-shadow: 0px 0px 1px 0px $colors-dark-grey;
+
+  &:empty {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+    li {
+      border-bottom: 1px solid $colors-dark-grey;
+      padding: 5px;
+      padding-right: 25px;
+      background-color: $colors-light-grey;
+      color: $colors-text;
+      cursor: pointer;
+      font-size: $fonts-large-size;
+
+      i {
+        font-size: $fonts-small-size;
+      }
+
+      &:hover {
+        border: 1px solid $colors-melon;
+        background-color: white;
+        color: $colors-text-selected;
+      }
+    }
+  }
+}
