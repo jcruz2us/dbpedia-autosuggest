@@ -26,7 +26,6 @@ This plugin uses the [dbpedia lookup web service](https://github.com/dbpedia/loo
 - Suggestion for dbpedia resources come up as you type
 - jQuery 1.8.3+
 - Browser Support: IE10+, FF23, Safari6, Opera12, Chrome29
-- 
 
 
 More Coming Soon...
