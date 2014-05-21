@@ -55,6 +55,18 @@
 				monitorInput: function () {
 					var _this = this;
 
+					$(this.element).on('focus', function (e) {
+						_this.positionPane();
+						_this.$results
+							.empty('.status')
+							.prepend("<div class='status'>Start typing to get some suggestions...</div>")
+					});
+
+					$(this.element).on('blur', function (e) {
+						_this.positionPane();
+						_this.$results.empty()
+					});
+
 					$(this.element).on('keyup', function (e) {
 						//_this.$results.append("<div>" + $(_this.element).val() + "</div>");
 						
@@ -77,20 +89,26 @@
 						url: url,
 						headers: { "Accept": "application/json" }
 					};
+
+					this.positionPane();
+					this.$results
+						.empty('.status')
+						.prepend("<div class='status'>Searching...</div>")
 					$.ajax(options).then(function (response) {
+						_this.$results.empty('.status');
 						_this.displayResults(response.results);
 					});
 				},
 				displayResults: function (results) {
 					var _this = this;
 					console.log(results);
-					this.positionResults();
+					this.positionPane();
 
 					if(!results.length){
 						this.$results
 						.off('click', 'li')
 						.empty()
-						.append("<div>No Suggestions</div>")
+						.append("<div class='status'>No Suggestions</div>")
 						return;
 					}
 
@@ -115,7 +133,7 @@
 							$(_this.element).trigger('dbpedia.select', data);
 						});
 				},
-				positionResults: function () {
+				positionPane: function () {
 					//we want the offset - this position relative to the document
 					var position = $(this.element).offset();
 					//adjust for the height of the input field
