@@ -8,12 +8,27 @@ $colors-2: #a1b8c2;
 $colors-text: #427084;
 $colors-text-selected: #003048;
 
+
+$colors-green: #758B5A;
+$colors-yellow: #FFD526;
+$colors-white: #FFFFFF;
+$colors-blue: #004563;
+$colors-black: #000000;
+
+
+$colors-dark-blue: #004058;
+$colors-light-blue: #688593;//#557A8B;
+$colors-gray: #CAD4D9;
+$colors-light-orange: #F2BE26;
+$colors-dark-orange: #F3971D;
+
 .dbpedia-autosuggest {
-  border: 1px solid $colors-dark-grey;
-  padding: 2px;
+  //padding: 2px;
   margin-top: 2px;
-  background-color: white;
-  box-shadow: 0px 0px 1px 0px $colors-dark-grey;
+  background-color: $colors-gray;
+  box-shadow: 0px 1px 1px 0px $colors-dark-grey;
+  border-radius: 2px;
+  width: 320px;
 
   &:empty {
     display: none;
@@ -26,22 +41,26 @@ $colors-text-selected: #003048;
 
 
     li {
-      border-bottom: 1px solid $colors-dark-grey;
-      padding: 5px;
+      margin: 1px 1px;
+      padding: 10px;
       padding-right: 25px;
-      background-color: $colors-light-grey;
-      color: $colors-text;
+      background-color: white;
+      color: $colors-dark-blue;
       cursor: pointer;
       font-size: $fonts-large-size;
+      min-height: 32px;
+      
+      //box-shadow: 1px 1px 1px 0px gray;
 
       i {
         font-size: $fonts-small-size;
       }
 
       &:hover {
-        border: 1px solid $colors-melon;
-        background-color: white;
-        color: $colors-text-selected;
+        //border: 1px solid $colors-melon;
+        background-color: $colors-light-blue;
+        color: white;
+        font-weight: bold;
       }
     }
   }
