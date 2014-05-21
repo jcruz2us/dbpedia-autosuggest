@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheets/main.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <input id="dbpedia-searchbox" type="text" />
+    </div>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

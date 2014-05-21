@@ -1,0 +1,39 @@
+/* line 25, ../../src/stylesheets/main.scss */
+.dbpedia-autosuggest {
+  margin-top: 2px;
+  background-color: #cad4d9;
+  box-shadow: 0px 1px 1px 0px gray;
+  border-radius: 2px;
+  width: 320px;
+}
+/* line 33, ../../src/stylesheets/main.scss */
+.dbpedia-autosuggest:empty {
+  display: none;
+}
+/* line 37, ../../src/stylesheets/main.scss */
+.dbpedia-autosuggest ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 43, ../../src/stylesheets/main.scss */
+.dbpedia-autosuggest ul li {
+  margin: 1px 1px;
+  padding: 10px;
+  padding-right: 25px;
+  background-color: white;
+  color: #004058;
+  cursor: pointer;
+  font-size: 14px;
+  min-height: 32px;
+}
+/* line 55, ../../src/stylesheets/main.scss */
+.dbpedia-autosuggest ul li i {
+  font-size: 11px;
+}
+/* line 59, ../../src/stylesheets/main.scss */
+.dbpedia-autosuggest ul li:hover {
+  background-color: #688593;
+  color: white;
+  font-weight: bold;
+}

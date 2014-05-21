@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style type="text/css">
+      body, * {
+        font-family: sans-serif;
+      }
+
+      .container {
+        width: 400px;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin: 0 auto;
+        padding: 5px;
+      }
+      
+      .container h1 {
+        text-align: center;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../dist/stylesheets/jquery.dbpedia.autosuggest.css">
+    </link>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      Item Selected <strong></strong>
+    </div>
+
+    <div class="container">
+      <input id="dbpedia-searchbox" type="text" />
+    </div>
+
+    <script src="../dist/scripts/jquery.dbpedia.autosuggest.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#dbpedia-searchbox")
+          .dbpediaAutosuggest()
+          .on('dbpedia.select', function (e, data) {
+            $("strong").html(data.label);
+          });
+      });
+    </script>
+  </body>
+</html>
