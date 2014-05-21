@@ -72,7 +72,7 @@
 				executeSearch: function (term) {
 					var _this = this;
 					//this.$results.append("<div>Search: " + term + "</div>");
-					var url = "http://lookup.dbpedia.org/api/search/PrefixSearch?QueryClass=&MaxHits=5&QueryString=" + term;
+					var url = "http://lookup.dbpedia.org/api/search/PrefixSearch?QueryClass=&MaxHits=10&QueryString=" + term;
 					var options = {
 						url: url,
 						headers: { "Accept": "application/json" }
