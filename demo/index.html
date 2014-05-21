@@ -23,16 +23,21 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body>
+    <div>
+      Item Selected <strong></strong>
+    </div>
+
     <div class="container">
       <input id="dbpedia-searchbox" type="text" />
     </div>
+
     <script src="../dist/scripts/jquery.dbpedia.autosuggest.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
         $("#dbpedia-searchbox")
           .dbpediaAutosuggest()
           .on('dbpedia.select', function (e, data) {
-            console.log('select', data);
+            $("strong").html(data.label);
           });
       });
     </script>

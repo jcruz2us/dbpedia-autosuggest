@@ -35,22 +35,9 @@
 
 		Plugin.prototype = {
 				init: function () {
-					// Place initialization logic here
-					// You already have access to the DOM element and
-					// the options via the instance, e.g. this.element
-					// and this.settings
-					// you can add more functions like the one below and
-					// call them like so: this.yourOtherFunction(this.element, this.settings).
-					console.log("xD");
-
 					//create the div used to display the results
-
 					this.$results = $("<div class='dbpedia-autosuggest'></div>").appendTo('body');
-
 					this.monitorInput();
-				},
-				yourOtherFunction: function () {
-						// some logic
 				},
 				monitorInput: function () {
 					var _this = this;
@@ -62,13 +49,12 @@
 							.prepend("<div class='status'>Start typing to get some suggestions...</div>")
 					});
 
-					$(this.element).on('blur', function (e) {
-						_this.positionPane();
-						_this.$results.empty()
-					});
+					// $(this.element).on('blur', function (e) {
+					// 	_this.positionPane();
+					// 	_this.$results.empty()
+					// });
 
 					$(this.element).on('keyup', function (e) {
-						//_this.$results.append("<div>" + $(_this.element).val() + "</div>");
 						
 						if (_this.searchThrottle) {
 							//there is an existing throttle...clear it out before setting a new one
@@ -83,7 +69,6 @@
 				},
 				executeSearch: function (term) {
 					var _this = this;
-					//this.$results.append("<div>Search: " + term + "</div>");
 					var url = "http://lookup.dbpedia.org/api/search/PrefixSearch?QueryClass=&MaxHits=10&QueryString=" + term;
 					var options = {
 						url: url,
@@ -94,6 +79,7 @@
 					this.$results
 						.empty('.status')
 						.prepend("<div class='status'>Searching...</div>")
+					
 					$.ajax(options).then(function (response) {
 						_this.$results.empty('.status');
 						_this.displayResults(response.results);
@@ -101,7 +87,6 @@
 				},
 				displayResults: function (results) {
 					var _this = this;
-					console.log(results);
 					this.positionPane();
 
 					if(!results.length){
@@ -127,7 +112,6 @@
 						.off('click', 'li')
 						.empty()
 						.append($list)
-						//.append(html)
 						.on('click', 'li', function () {
 							var data = $(this).data('dbpedia-result');
 							$(_this.element).trigger('dbpedia.select', data);
