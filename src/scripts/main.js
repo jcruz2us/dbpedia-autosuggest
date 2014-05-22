@@ -45,27 +45,12 @@
 
 					$(this.element).on('focus', function (e) {
 						_this.positionPane();
-						_this.$results
-							.empty('.status')
-							.prepend("<div class='status'>Start typing to get some suggestions...</div>")
+						_this.search();
 					});
 
-					// $(this.element).on('blur', function (e) {
-					// 	_this.positionPane();
-					// 	_this.$results.empty()
-					// });
-
 					$(this.element).on('keyup', function (e) {
-						
-						if (_this.searchThrottle) {
-							//there is an existing throttle...clear it out before setting a new one
-							clearTimeout(_this.searchThrottle);
-							_this.searchThrottle = null;
-						}
-
-						_this.searchThrottle = setTimeout(function () {
-							_this.executeSearch($(_this.element).val());
-						}, 250);
+						_this.positionPane();
+						_this.search();
 					});
 				},
 				executeSearch: function (term) {
@@ -82,9 +67,48 @@
 						.prepend("<div class='status'>Searching...</div>")
 					
 					$.ajax(options).then(function (response) {
+						_this.lastSearch = {
+							query: term,
+							results: response.results
+						};
 						_this.$results.empty('.status');
 						_this.displayResults(response.results);
 					});
+				},
+				search: function () {
+					var _this = this;
+					var $pane = this.$results;
+					var inputVal = $(_this.element).val();
+					//check if the textbox has a valid input
+					if(!inputVal){
+						$pane
+							.empty('.status')
+							.prepend("<div class='status'>Start typing to get some suggestions...</div>");
+					}
+					else{
+						//there is a value in the input textbox
+
+						//check its a new search...
+						if(!_this.lastSearch || _this.lastSearch.query !== inputVal){
+							//throttle the search
+
+							if (_this.searchThrottle) {
+								//there is an existing throttle...clear it out before setting a new one
+								clearTimeout(_this.searchThrottle);
+								_this.searchThrottle = null;
+							}
+
+							_this.searchThrottle = setTimeout(function () {
+								//we waited long enough for more keystroked...
+								//really do the search
+								_this.executeSearch($(_this.element).val());
+							}, 250);
+						}
+						//else
+						//its an old search. display the previous results
+					}
+					//display
+					$pane.addClass('in');
 				},
 				displayResults: function (results) {
 					var _this = this;
@@ -111,8 +135,8 @@
 
 					this.$results
 						.off('click', 'li')
-						.empty()
 						.append($list)
+						.addClass('in')
 						.on('click', 'li', function () {
 							var data = $(this).data('dbpedia-result');
 							$(_this.element).trigger('dbpedia.select', data);
@@ -126,9 +150,6 @@
 
 					this.$results.css("position", "absolute").css(position);
 				},
-				dismissPane: function () {
-					this.$results.css('display', 'none');
-				},
 				dismissOnOutsideClick: function () {
 					var _this = this;
 					var $pane = _this.$results;
@@ -136,9 +157,8 @@
 					$('body').on('click', function (e) {
 						var actionInPane = $pane.is(e.target) || $.contains($pane[0], e.target);
 						var inputClick = $input.is(e.target);
-						if(!actionInPane && !inputClick)
-						{
-							_this.$results.empty()
+						if(!actionInPane && !inputClick){
+							_this.$results.removeClass('in');
 						}
 					});
 				}
