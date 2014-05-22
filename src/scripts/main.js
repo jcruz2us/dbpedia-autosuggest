@@ -139,7 +139,9 @@
 						.addClass('in')
 						.on('click', 'li', function () {
 							var data = $(this).data('dbpedia-result');
+							$(_this.element).val(data.label);
 							$(_this.element).trigger('dbpedia.select', data);
+							_this.$results.removeClass('in');
 						});
 				},
 				positionPane: function () {
