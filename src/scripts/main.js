@@ -38,6 +38,7 @@
 					//create the div used to display the results
 					this.$results = $("<div class='dbpedia-autosuggest'></div>").appendTo('body');
 					this.monitorInput();
+					this.dismissOnOutsideClick();
 				},
 				monitorInput: function () {
 					var _this = this;
@@ -127,6 +128,19 @@
 				},
 				dismissPane: function () {
 					this.$results.css('display', 'none');
+				},
+				dismissOnOutsideClick: function () {
+					var _this = this;
+					var $pane = _this.$results;
+					var $input = $(_this.element);
+					$('body').on('click', function (e) {
+						var actionInPane = $pane.is(e.target) || $.contains($pane[0], e.target);
+						var inputClick = $input.is(e.target);
+						if(!actionInPane && !inputClick)
+						{
+							_this.$results.empty()
+						}
+					});
 				}
 		};
 
