@@ -1,5 +1,5 @@
 {
-  "name": "DBpedia Autosuggest",
+  "name": "dbpedia-autosuggest",
   "version": "0.0.0",
   "description": "A jQuery plugin that adds a dbpedia-powered autocomplete feature to any input box.",
   "dependencies": {
