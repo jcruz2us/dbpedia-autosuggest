@@ -11,6 +11,10 @@ This plugin uses the [dbpedia lookup web service](https://github.com/dbpedia/loo
 	#install gulp globally
 	npm install -g gulp
 
+	#install compass
+	gem update --system
+	gem install compass
+
 	#clone this repo or your fork
 	git clone 
 
