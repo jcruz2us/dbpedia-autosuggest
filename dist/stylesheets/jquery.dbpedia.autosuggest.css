@@ -1,4 +1,4 @@
-/* line 25, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 10, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest {
   margin-top: 2px;
   background-color: #cad4d9;
@@ -7,17 +7,17 @@
   width: 320px;
   opacity: 0;
 }
-/* line 34, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 19, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest:empty {
   display: none;
 }
-/* line 38, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 23, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 44, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 29, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest ul li {
   margin: 1px 1px;
   padding: 10px;
@@ -28,18 +28,18 @@
   font-size: 14px;
   min-height: 32px;
 }
-/* line 56, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 41, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest ul li i {
   font-size: 11px;
 }
-/* line 60, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 45, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest ul li:hover {
   background-color: #688593;
   color: white;
   font-weight: bold;
 }
 
-/* line 70, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
+/* line 54, ../../src/stylesheets/jquery.dbpedia.autosuggest.scss */
 .dbpedia-autosuggest.in {
   opacity: 1;
 }
