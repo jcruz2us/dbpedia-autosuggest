@@ -19,8 +19,8 @@ gulp.task('compass', function() {
             css: 'dist/stylesheets',
             sass: 'src/stylesheets'
         }))
-        .pipe( rename('jquery.dbpedia.autosuggest.css') )
-        .pipe(gulp.dest('dist/stylesheets'))
+        //.pipe( rename('jquery.dbpedia.autosuggest.css') )
+        //.pipe(gulp.dest('dist/stylesheets'))
 
         .pipe( rename('jquery.dbpedia.autosuggest.min.css') )
         .pipe(minifyCSS())

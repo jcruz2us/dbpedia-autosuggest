@@ -1,26 +1,11 @@
 $fonts-small-size: 11px;
 $fonts-large-size: 14px;
 
-$colors-light-grey: #e9edef;
 $colors-dark-grey: #808080;
-$colors-melon: #fdd78f;
-$colors-2: #a1b8c2;
-$colors-text: #427084;
-$colors-text-selected: #003048;
-
-
-$colors-green: #758B5A;
-$colors-yellow: #FFD526;
-$colors-white: #FFFFFF;
-$colors-blue: #004563;
-$colors-black: #000000;
-
 
 $colors-dark-blue: #004058;
 $colors-light-blue: #688593;//#557A8B;
 $colors-gray: #CAD4D9;
-$colors-light-orange: #F2BE26;
-$colors-dark-orange: #F3971D;
 
 .dbpedia-autosuggest {
   //padding: 2px;
@@ -58,7 +43,6 @@ $colors-dark-orange: #F3971D;
       }
 
       &:hover {
-        //border: 1px solid $colors-melon;
         background-color: $colors-light-blue;
         color: white;
         font-weight: bold;
