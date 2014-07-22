@@ -1,0 +1,25 @@
+{
+  "name": "dbpedia-autosuggest",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jcruz2us/dbpedia-autosuggest",
+  "authors": [
+    "Jorge Cruz jcruz2us@yahoo.com"
+  ],
+  "description": "A jQuery plugin that suggests dbpedia resources as you type.",
+  "keywords": [
+    "jquery",
+    "dbpedia",
+    "autosuggest"
+  ],
+  "license": "GPL2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests",
+    "src",
+    "demo"
+  ]
+}
