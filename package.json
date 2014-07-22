@@ -1,7 +1,7 @@
 {
   "name": "dbpedia-autosuggest",
-  "version": "0.0.0",
-  "description": "A jQuery plugin that adds a dbpedia-powered autocomplete feature to any input box.",
+  "version": "0.0.1",
+  "description": "A jQuery plugin that suggests dbpedia resources as you type.",
   "dependencies": {
     "gulp": "^3.5.0",
     "gulp-concat": "~2.1.7",
